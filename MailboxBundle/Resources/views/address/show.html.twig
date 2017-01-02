@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Address</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ address.id }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ address.city }}</td>
+            </tr>
+            <tr>
+                <th>Street</th>
+                <td>{{ address.street }}</td>
+            </tr>
+            <tr>
+                <th>Housenumber</th>
+                <td>{{ address.houseNumber }}</td>
+            </tr>
+            <tr>
+                <th>Flatnumber</th>
+                <td>{{ address.flatNumber }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('person_show', {'id' : address.person.id}) }}">Back to the person</a>
+        </li>
+        <li>
+            <a href="{{ path('address_edit', { 'id': address.id }) }}">Edit</a>
+        </li>
+    </ul>
+{% endblock %}
